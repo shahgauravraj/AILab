@@ -25,11 +25,12 @@ def minimax(depth, nodeIndex, maxturn, alpha, beta):
             print(depth + 1, nodeIndex * Children + i, best, val)
         return best
 
+# Driver Code
+
 maximum, minimum = 1000, -1000
 values = random.sample(range(-2, 10), 8)
 
 # values = [3, 5, 6, 9, 1, 2, 0, -1]
-# values = [2, 7, 6, 8]
 
 print(str(values))
 Children = 2
