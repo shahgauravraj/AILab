@@ -15,7 +15,7 @@ def build_graph_weighted(file):
 
 def build_heuristic_dict():
     h = {}
-    with open("Heuristics.txt",'r') as file:
+    with open("Heuristics.txt", 'r') as file:
         for line in file:
             line = line.strip().split(',')
             node = line[0].strip()
@@ -27,9 +27,9 @@ def a_star(graph, start, dest):
     frontier = []
     h = build_heuristic_dict()
     f_cost = 0 + h[start]
-    heapq.heappush(frontier,(f_cost,[(start,0)]))
+    heapq.heappush(frontier, (f_cost, [(start, 0)]))
     explored = set()
-    while len(frontier)!=0:
+    while len(frontier) != 0:
         for i in range(len(frontier)):
             print(frontier[i])
         print()
@@ -37,23 +37,23 @@ def a_star(graph, start, dest):
         node = path[-1][0]
         g_cost = path[-1][1]
         explored.add(node)
-        if node==dest :
-            return [x for x,y in path]
+        if node == dest :
+            return [x for x, y in path]
         for neighbor, dist in graph[node].items():
             total_cost = g_cost + dist
             f_cost = total_cost + h[neighbor]
-            new_path = path + [(neighbor,total_cost)]
+            new_path = path + [(neighbor, total_cost)]
             if neighbor not in explored:
-                heapq.heappush(frontier,(f_cost,new_path))
+                heapq.heappush(frontier, (f_cost, new_path))
             elif neighbor in frontier:
-                heapq.heappush(frontier,(f_cost,new_path))
+                heapq.heappush(frontier, (f_cost, new_path))
                 print(path)
     return False
 
-if __name__ == "__main__":
-    with open("Graph.txt",'r') as file:
-        lines = file.readlines()
-    start = lines[1].strip()
-    dest = lines[2].strip()
-    graph = build_graph_weighted(lines[4:])
-    print(a_star(graph,start,dest),"\n\n")
+
+with open("Graph.txt",'r') as file:
+    lines = file.readlines()
+start = lines[1].strip()
+dest = lines[2].strip()
+graph = build_graph_weighted(lines[4:])
+print(a_star(graph,start,dest), "\n\n")
