@@ -5,15 +5,15 @@ sq = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def board():
     print('\n\tTic Tac Toe')
     print('Player 1 (X) - Player 2 (0)')
-    print('   |   |   ')
-    print('',sq[1],'|',sq[2],'|',sq[3])
-    print('___|___|___')
-    print('   |   |   ')
-    print('',sq[4],'|',sq[5],'|',sq[6])
-    print('___|___|___')
-    print('   |   |   ')
-    print('',sq[7],'|',sq[8],'|',sq[9])
-    print('   |   |   ')
+    print('\t   |   |   ')
+    print('\t',sq[1],'|',sq[2],'|',sq[3])
+    print('\t___|___|___')
+    print('\t   |   |   ')
+    print('\t',sq[4],'|',sq[5],'|',sq[6])
+    print('\t___|___|___')
+    print('\t   |   |   ')
+    print('\t',sq[7],'|',sq[8],'|',sq[9])
+    print('\t   |   |   ')
 
 def game_status():
     if sq[1] == sq[2] and sq[2] == sq[3]:
