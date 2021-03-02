@@ -79,6 +79,7 @@ while status == -1:
     
 print("RESULT")
 if status == 1:
+    board()
     print('Player', player-1, 'win')
 else:
     print('Game draw')

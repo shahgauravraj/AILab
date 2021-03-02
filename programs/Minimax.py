@@ -1,6 +1,5 @@
-# A simple Python3 program to find 
-# maximum score that 
-# maximizing player can get 
+# A simple program to implement Minimax algorithm
+
 import math 
 import random
 
